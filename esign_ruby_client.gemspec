@@ -4,7 +4,7 @@ require_relative "lib/esign_ruby_client/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "esign_ruby_client"
-  spec.version       = EsignRubyClient::VERSION
+  spec.version       = Esign::Client::VERSION
   spec.authors       = ["Wardy"]
   spec.email         = ["chris@e-sign.co.uk"]
 
@@ -28,8 +28,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
+  spec.add_development_dependency 'pry', '~> 0.11.3'
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html

@@ -2,7 +2,10 @@
 
 require_relative "esign_ruby_client/version"
 
-module EsignRubyClient
-  class Error < StandardError; end
-  # Your code goes here...
+module Esign
+  class Client
+    def initialize
+
+    end
+  end
 end

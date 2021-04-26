@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-RSpec.describe EsignRubyClient do
+RSpec.describe Esign::Client do
   it "has a version number" do
-    expect(EsignRubyClient::VERSION).not_to be nil
+    expect(Esign::Client::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  it "creates a new instance of Esign::Client" do
+    expect(Esign::Client.new).to be_a(Esign::Client)
   end
 end

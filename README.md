@@ -1,12 +1,10 @@
 # EsignRubyClient
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/esign_ruby_client`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The official E-Sign Ruby Client gem for interacting with V3 of the E-Sign Signatures API.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Gemfile:
 
 ```ruby
 gem 'esign_ruby_client'
@@ -22,7 +20,34 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Here's how to send an Envelope for signing using the library:
+
+```ruby
+require 'esign_ruby_client'
+
+# First, instantiate the E-Sign Client with your API key
+esign_client = Esign::Client.new 'your-api-key'
+
+# Define your envelope parameters
+env_params =  { 
+  envelope: { # Envelope pack meta
+    title: 'Contract Signing Pack',
+    documents: [{ # individual documents array
+      'title': 'Employment Contract',
+      'upload_file': { # Uploaded file ID
+        'id': 'Ad1cC97Uce0I2jPVEpbHPARvFpxxnA'
+      }
+    }],
+    signers: [{ # Signers Array
+      'name': 'Foo Bar',
+      'email': 'hello@example.com'
+    }]
+  }
+}
+
+# Send your envelope through the client
+esign_client.send_envelope env_params
+```
 
 ## Development
 
