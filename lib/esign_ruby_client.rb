@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
-require_relative "esign_ruby_client/version"
+require "esign_ruby_client/version"
+require "esign_ruby_client/client/client"
 
 module Esign
-  class Client
-    def initialize
-
+  class << self
+    def configure(options={}) 
+      Esign::Client.configure(options)
     end
   end
 end

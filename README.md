@@ -26,7 +26,21 @@ Here's how to send an Envelope for signing using the library:
 require 'esign_ruby_client'
 
 # First, instantiate the E-Sign Client with your API key
-esign_client = Esign::Client.new 'your-api-key'
+esign_client = Esign.configure({
+  api_key: 'your-api-key',
+  base_url: "https://api.e-sign.co.uk/v3",
+  access_token: <ACCESS_TOKEN>,
+  client_id: <CLIENT_ID>,
+  client_secret: <CLIENT_SECRET>,
+  redirect_uri: <REDIRECT_URI>,
+})
+
+
+# api_key
+
+# oauth
+
+
 
 # Define your envelope parameters
 env_params =  { 
