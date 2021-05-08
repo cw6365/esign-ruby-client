@@ -1,0 +1,2 @@
+class UnknownEnvironmentError < StandardError
+end
